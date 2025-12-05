@@ -23,7 +23,7 @@
     /* General Body Styles */
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        background-color: #e9ecef; /* A light, professional grey */
+        background-color: #4a2525; /* Shaded burgundy background */
         color: #495057; /* Darker text for readability */
         line-height: 1.6;
         margin: 0;
@@ -49,7 +49,7 @@
         font-weight: 600;
     }
 
-    h1 { font-size: 2.2rem; }
+    h1 { font-size: 2.2rem; color: #8D2828; }
     h2 { font-size: 1.8rem; }
     p { margin-bottom: 1.5rem; }
 
@@ -78,8 +78,8 @@
 
     input[type="text"]:focus,
     textarea:focus {
-        border-color: #007bff;
-        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        border-color: #8D2828;
+        box-shadow: 0 0 0 0.2rem rgba(141, 40, 40, 0.25);
         outline: none;
     }
 
@@ -89,7 +89,7 @@
 
     /* Emphasize section titles */
     strong {
-        color: #0056b3; /* A professional blue */
+        color: #8D2828; /* A professional burgundy */
     }
     
     .col-lg-12.col-md-12[align="left"] > label {
@@ -103,7 +103,7 @@
 
     /* Professional Button Style */
     input[type="submit"] {
-        background-color: #007bff;
+        background-color: #8D2828;
         color: white;
         padding: 0.8rem 1.5rem;
         border: none;
@@ -118,28 +118,57 @@
     }
 
     input[type="submit"]:hover {
-        background-color: #0056b3;
+        background-color: #6C1F1F;
     }
 
     /* Link styling */
     a.segundo {
-        color: #007bff;
+        color: #c82333; /* A brighter red for emphasis */
         text-decoration: none;
         font-weight: 600;
     }
     a.segundo:hover {
         text-decoration: underline;
     }
+
+    /* Margin calibration section refinement */
+    .margin-row {
+        margin-bottom: 0.75rem; /* Tighter spacing */
+    }
+    .margin-row > div {
+        display: flex;
+        align-items: center;
+    }
+    .margin-row input[type="text"] {
+        width: 75px !important; /* Override general width:100% */
+        margin-right: 8px;
+    }
+
+    /* Style for horizontal rule */
+    hr {
+        border: none;
+        border-top: 1px solid #dee2e6; /* Light grey, matching other borders */
+        margin: -0.5rem 0 2.5rem; /* Vertical spacing */
+    }
+
+    /* Vertical divider for address section */
+    @media (min-width: 992px) {
+        .address-columns > .col-lg-6:first-of-type {
+            padding-right: 2.5rem;
+        }
+        .address-columns > .col-lg-6:last-of-type {
+            border-left: 1px solid #dee2e6;
+            padding-left: 2.5rem;
+        }
+    }
 </style>
 </head>
 <body>
 
 <div class="contenedor" style="height: auto !important;">
-<h1 class="normal" align="center">Completar e Imprimir Carta Documento Correo Argentino.<br><br></h1>
-<p>Si tiene que imprimir una carta documento del Correo Argentino, la puede completar con su computadora. Deberá imprimir sobre una carta oficial del correo argentino.<br><br></p>
-<h2 class="normal" align="center">Complete los Campos de la Carta Documento<br> </h2>
+<h1 class="normal" align="center">IMPRESION CARTA DOCUMENTO</h1>
 <form id="form1" name="form1" method="post" action="https://imprimir-carta-documento.preimpresos.com/imprimir.php" style="height: auto !important;">
-  <div class="fila">
+  <div class="fila address-columns">
   <div class="col-lg-6 col-md-12" align="left"><div class="fila">
   <div class="col-lg-5 col-md-12" align="left"><strong>REMITENTE</strong> (1er línea) </div>
   <div class="col-lg-7 col-md-12" align="left"><label><input name="remitente1" type="text" value="" size="40" maxlength="40"></label> </div>
@@ -206,6 +235,7 @@
 
 </div>
 </div>
+<hr>
 <div class="fila">
   <div class="col-lg-12 col-md-12" align="left">Lugar y fecha(opcional alineado a la derecha como una carta)</div>
   <div class="col-lg-12 col-md-12" align="left"><label><input name="lugarfecha" type="text" size="40"></label></div>
@@ -231,37 +261,36 @@
   <div class="col-lg-3 col-md-12" align="left"><label><input name="datomas" type="text" value="" size="50"></label></div>
 </div>
 <div class="fila">
-  <div class="col-lg-12 col-md-12" align="left"><label><input name="achicarletra" type="checkbox" value="achicar"></label> Click aqui si tiene una carta muy larga para achicar el tamaño de la letra.</div>
-  <div class="col-lg-12 col-md-12" align="left"><label><input type="submit" name="Submit" value="Enviar"></label>Se creará un PDF que debe imprimir como hoja oficio, recuerde que puedes volver a esta página y corregir , imprima primero en una hoja oficio en blanco y comparela a trasluz con la CD </div>
+  <div class="col-lg-12 col-md-12" align="left"><label><input name="achicarletra" type="checkbox" value="achicar"> Click aqui si tiene una carta muy larga para achicar el tamaño de la letra.</label></div>
+  <div class="col-lg-12 col-md-12" align="left"><input type="submit" name="Submit" value="Imprimir PDF"> Recuerde imprimir este PDF en OFICIO, imprima primero en una hoja en blanco y comparela con la CD </div>
 </div>
+<hr>
 <div class="fila">
-  <div class="col-lg-12 col-md-12" align="left"><br><strong>Calibración </strong>(Solo la impresión quedó fuera de lugar)<br><br>
-        Deberá tener un par de hojas oficio para hacer una prueba antes de imprimir.<br>
+  <div class="col-lg-12 col-md-12" align="left"><strong>Calibración </strong>(Solo si la impresión quedó fuera de lugar)<br><br>
+        Deberá tener  algunas hojas oficio para hacer una prueba antes de imprimir.<br>
         Como no todas las impresoras imprimen igual ,muchas difieren varios milimetros en su impresión aquí tiene una solución para que tu impresora se ajuste a la carta documento preimpresa. <br>
         Imprima en una hoja oficio en blanco la siguiente <a href="https://imprimir-carta-documento.preimpresos.com/test.php" class="segundo"> impresión de prueba,</a> configurandola como hoja oficio al momento de imprimir.<br>
         Luego mida los margenes impresos en la hoja e ingreselos en el formulario.<br>
-        Con estos datos se calibrara la impresión especialmente a su impresora (sin letras fuera de lugar en la CD) <a target="_blank" href="https://imprimir-carta-documento.preimpresos.com/cartadocweb.jpg" class="segundo">Ver ejemplo de CD Impresa </a><br>
-        Ingrese los valores que ve en tu impresión de prueba.<br>
+        <br>
         Si no hizo la impresión de prueba deje los que estan por defecto puede funcionar bien. <br><br>
         
-
       </div>
 </div>
-<div class="fila">
+<div class="fila margin-row">
   <div class="col-lg-3 col-md-12" align="left">Margen Superior</div>
-  <div class="col-lg-3 col-md-12" align="left"><label><input name="bordesuperior" type="text" value="5" size="3">mm </label></div>
+  <div class="col-lg-3 col-md-12" align="left"><input name="bordesuperior" type="text" value="5" size="3">mm</div>
 </div>
-<div class="fila">
+<div class="fila margin-row">
   <div class="col-lg-3 col-md-12" align="left">Margen Inferior </div>
-  <div class="col-lg-3 col-md-12" align="left"><label><input name="bordeinferior" type="text" value="5" size="3">mm </label></div>
+  <div class="col-lg-3 col-md-12" align="left"><input name="bordeinferior" type="text" value="5" size="3">mm</div>
 </div>
-<div class="fila">
+<div class="fila margin-row">
   <div class="col-lg-3 col-md-12" align="left">Margen Izquierdo </div>
-  <div class="col-lg-3 col-md-12" align="left"><label><input name="bordeizquierdo" type="text" value="3" size="3">mm</label></div>
+  <div class="col-lg-3 col-md-12" align="left"><input name="bordeizquierdo" type="text" value="3" size="3">mm</div>
 </div>
-<div class="fila">
+<div class="fila margin-row">
   <div class="col-lg-3 col-md-12" align="left">Margen Derecho </div>
-  <div class="col-lg-3 col-md-12" align="left"><label><input name="bordederecho" type="text" value="3" size="3">mm</label></div>
+  <div class="col-lg-3 col-md-12" align="left"><input name="bordederecho" type="text" value="3" size="3">mm</div>
 </div>
 </form>
 
